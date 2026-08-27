@@ -310,6 +310,7 @@ main {
 }
 
 .ending .ending__box {
+    box-sizing: content-box; /* match the portfolio: 200px + 5% padding */
     height: 200px;
     display: flex;
     align-items: center;
