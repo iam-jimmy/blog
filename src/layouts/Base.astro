@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import { BASE, PORTFOLIO_URL, CONTACT_EMAIL } from '../utils/posts';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = 'Notes on what I build and learn.' } = Astro.props;
+const fullTitle = title ? `${title} · Jimmy Kim` : 'Jimmy Kim - Blog';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{fullTitle}</title>
+    <meta name="description" content={description}>
+    <link rel="canonical" href={canonical}>
+    <meta property="og:title" content={fullTitle}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonical}>
+    <link rel="alternate" type="application/rss+xml" title="Jimmy Kim - Blog" href={`${BASE}/rss.xml`}>
+    <link rel="icon" href={`${BASE}/favicon.svg`} type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+</head>
+<body>
+<header class="site__header">
+    <div class="container">
+        <a href={`${BASE}/`}>Jimmy Kim</a>
+        <nav>
+            <a href={PORTFOLIO_URL}>Portfolio</a>
+            <a href={`${BASE}/rss.xml`}>RSS</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <slot />
+</main>
+
+<section class="ending">
+    <div class="container">
+        <div class="ending__box">
+            <div>
+                <p>WHY NOT?</p>
+                <p><a href={`mailto:${CONTACT_EMAIL}`}>GET IN TOUCH</a></p>
+            </div>
+        </div>
+    </div>
+    <span class="copyright">© {new Date().getFullYear()} Jimin Kim. Crafted with care. All rights reserved.</span>
+</section>
+</body>
+</html>
