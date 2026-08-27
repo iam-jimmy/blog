@@ -36,7 +36,7 @@ main {
 .site__header > .container {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     font-size: 1.1em;
     font-weight: 300;
 }
