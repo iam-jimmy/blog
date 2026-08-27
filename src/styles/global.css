@@ -46,6 +46,22 @@ main {
     color: #333;
 }
 
+.site__header .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.site__header .brand__mark {
+    height: 1em;
+    width: auto;
+    color: #333;
+}
+
+.site__header .brand:hover .brand__mark {
+    color: #999;
+}
+
 .site__header nav {
     display: flex;
     gap: 2em;

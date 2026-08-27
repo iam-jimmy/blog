@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { BASE, PORTFOLIO_URL, CONTACT_EMAIL } from '../utils/posts';
+import Logo from '../components/Logo.astro';
 
 interface Props {
   title?: string;
@@ -30,7 +31,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <body>
 <header class="site__header">
     <div class="container">
-        <a href={`${BASE}/`}>Jimmy Kim</a>
+        <a class="brand" href={`${BASE}/`}>
+            <Logo class="brand__mark" />
+            <span>Jimmy Kim</span>
+        </a>
         <nav>
             <a href={PORTFOLIO_URL}>Portfolio</a>
             <a href={`${BASE}/rss.xml`}>RSS</a>

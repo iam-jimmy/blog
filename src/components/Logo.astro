@@ -1,0 +1,30 @@
+---
+/**
+ * "KIM" in Morse code, stacked: K (-.-) / I (..) / M (--).
+ * Same idea as the dashed/dotted nav mark sketched in the portfolio source.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+<svg
+  class={className}
+  viewBox="0 0 36 24"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Jimmy Kim"
+>
+  <title>KIM, in Morse code</title>
+  <!-- K : dash dot dash -->
+  <rect x="0"  y="0" width="12" height="4" rx="1" />
+  <rect x="16" y="0" width="4"  height="4" rx="2" />
+  <rect x="24" y="0" width="12" height="4" rx="1" />
+  <!-- I : dot dot -->
+  <rect x="12" y="10" width="4" height="4" rx="2" />
+  <rect x="20" y="10" width="4" height="4" rx="2" />
+  <!-- M : dash dash -->
+  <rect x="4"  y="20" width="12" height="4" rx="1" />
+  <rect x="20" y="20" width="12" height="4" rx="1" />
+</svg>
